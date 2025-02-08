@@ -92,22 +92,13 @@
             <div class="inputBox">
                 <input type="email" placeholder="Your Email" required>
             </div>
-            <div class="stars-container">
-                <div class="stars">
-                    <span class="star" data-value="0.5"></span>
-                    <span class="star" data-value="1"></span>
-                    <span class="star" data-value="1.5"></span>
-                    <span class="star" data-value="2"></span>
-                    <span class="star" data-value="2.5"></span>
-                    <span class="star" data-value="3"></span>
-                    <span class="star" data-value="3.5"></span>
-                    <span class="star" data-value="4"></span>
-                    <span class="star" data-value="4.5"></span>
-                    <span class="star" data-value="5"></span>
-                </div>
-                <input type="hidden" id="star-rating" name="rating" value="0">
+            <div class="stars">
+                <span data-rating="1" class="fa fa-star"></span>
+                <span data-rating="2" class="fa fa-star"></span>
+                <span data-rating="3" class="fa fa-star"></span>
+                <span data-rating="4" class="fa fa-star"></span>
+                <span data-rating="5" class="fa fa-star"></span>
             </div>
-            
             <input type="hidden" id="star-rating" name="rating" value="0">
             <div class="inputBox">
                 <textarea placeholder="Write your review..." rows="5" required></textarea>
@@ -115,6 +106,7 @@
             <button type="submit" class="btn">Submit Review</button>
         </form>
     </section>
+    
     
     
     <!-- review section end -->

@@ -595,6 +595,29 @@ section{
     text-align: center;
 }
 
+/* Star Ratings in Review Form */
+.leave-review .stars {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.leave-review .stars .fa-star {
+    font-size: 2.5rem;
+    color: #ccc; /* Default star color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.leave-review .stars .fa-star:hover,
+.leave-review .stars .fa-star.hovered {
+    color: #FFA500; /* Hover color */
+}
+
+.leave-review .stars .fa-star.selected {
+    color: #FF7F50; /* Selected star color */
+}
+
+
 /* ------------- CONTACT PAGE ---------------------*/
 .contact {
     padding: 4rem 7%;
