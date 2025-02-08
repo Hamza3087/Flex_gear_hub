@@ -83,14 +83,14 @@ section{
 }
 
 .image {
-    padding-left: 100px; /* Keeps padding for alignment */
+    padding-left: 0px; /* Keeps padding for alignment */
 }
 
 .image img {
     width: 100%;
-    max-width: 400px; /* Adjust size as needed */
+    max-width: 400px; 
     height: 250px;
-    border-radius: 20%; /* Makes the image circular */
+    border-radius: 20%;
     box-shadow: 0 0 15px rgba(255, 165, 0, 0.8); /* Orange shadow (#FFA500) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -101,6 +101,23 @@ section{
 }
 
 
+.image2 {
+    padding-left: 0px; /* Keeps padding for alignment */
+}
+
+.image2 img {
+    width: 100%;
+    max-width: 400px; 
+    height: 250px;
+    border-radius: 0%;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.8); /* Orange shadow (#FFA500) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image2 img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgba(255, 165, 0, 1); /* Brighter orange shadow on hover */
+}
 
 .header .navbar a{
     margin: 0 2rem;
