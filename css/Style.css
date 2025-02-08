@@ -365,8 +365,9 @@ section{
 .about .row{
     display: flex;
     align-items: center;
-    background-color: black;
+    background: #141A26; /* Dark background for contrast */
     flex-wrap: wrap;
+    border-radius: 8px;
 }
 .about .row .image{
     flex: 1 1 45rem;
@@ -433,6 +434,11 @@ section{
 }
 
 /* ------------- DEALS PAGE ---------------------*/
+
+.box
+{
+    background: #141A26; /* Dark background for contrast */
+}
 
 .products .box-container{
     display: grid;
