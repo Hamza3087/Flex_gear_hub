@@ -277,13 +277,16 @@ section{
     align-items: center;
     margin-top: 30px;
     margin-bottom: 50px;
+
 }
 
 /* Styles for each horizontal image */
 .horizontal-image {
     width: 30%; /* Adjust the width as needed */
-    border-radius: 8px;
+    border-radius: 5%;
     /* Add more styling properties as per your requirements */
+    background: #141A26; /* Dark background for contrast */
+    padding: 20px;
 }
 
 .newsletter {
@@ -368,6 +371,7 @@ section{
     background: #141A26; /* Dark background for contrast */
     flex-wrap: wrap;
     border-radius: 8px;
+    padding:10px;
 }
 .about .row .image{
     flex: 1 1 45rem;
