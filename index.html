@@ -19,7 +19,7 @@
             <a href="index.html" >home</a>
             <a href="about.html">about</a>
             <a href="product.html">products</a>
-            <a href="review.html">review</a>
+            <a href="review.html">reviews</a>
             <a href="blogs.html">blogs</a>
             <a href="contact.html">contact</a>
             <a href="cart.html">cart</a>
@@ -86,13 +86,32 @@
         </div>  
     </section>
 
-    <h1 class="heading" style="margin-top: 80px;">Your all Sports Equipments <span>at one place</span></h1>
+    <h1 class="heading" style="margin-top: 80px;">All of your Sports Equipments <span>at one place</span></h1>
     <div class="horizontal-images">
         <img src="images/swimming.jpg" alt="Horizontal Image 1" class="horizontal-image">
         <img src="images/sports.jpg" alt="Horizontal Image 2" class="horizontal-image">
         <img src="images/gym.jpg" alt="Horizontal Image 3" class="horizontal-image">
     </div>
     
+        <!-- Newsletter Section Start -->
+    <section class="newsletter">
+        <h2>Don't miss out on new deals, emerging trends, and much more!</h2>
+        <form class="newsletter-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group checkbox">
+                <input type="checkbox" name="offers" id="offers" required>
+                <label for="offers">I would like to receive news and offers from FlexGear Hub!</label>
+            </div>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </section>
+    <!-- Newsletter Section End -->
+
 
     <!-- footer section start -->
     <section class="footer">
@@ -103,17 +122,25 @@
             <a href="#" class="fab fa-linkedin"></a>
             <a href="#" class="fab fa-pinterest"></a>
         </div>
-        <div class="credit"> all <span>rights</span> preserved</div>
+        <div class="credit"> all <span>rights</span> Reserved</div>
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const getYourButton = document.querySelector('.home .btn');
-
-        getYourButton.addEventListener('click', function() {
-            window.location.href = 'product.html';
+            const getYourButton = document.querySelector('.home .btn');
+    
+            getYourButton.addEventListener('click', function() {
+                window.location.href = 'product.html';
+            });
+    
+            // Newsletter form submission handling
+            document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset(); // Reset the form after submission
+            });
         });
-    });
     </script>
     <script src="js/script.js"></script>
+    
 </body>
 </html>

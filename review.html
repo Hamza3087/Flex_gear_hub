@@ -17,16 +17,13 @@
             <img src="images/logo.png" alt="logo">
         </a>
         <nav class="navbar">
-            <a href="index.html">home</a>
+            <a href="index.html" >home</a>
             <a href="about.html">about</a>
             <a href="product.html">products</a>
-            <a href="toprated.html">top sellers</a>
-            <a href="review.html">review</a>
+            <a href="review.html">reviews</a>
             <a href="blogs.html">blogs</a>
             <a href="contact.html">contact</a>
-            <a href="register.html">register</a>
             <a href="cart.html">cart</a>
-            <a href="payment.html">payment</a>
         </nav>
 
         <div class="icons">
@@ -80,10 +77,51 @@
     <!-- header section end -->
 
     
-    <!-- review section starts -->
 
+    <!-- Add a Leave a Review Button and Form -->
+    <section class="leave-review">
+        <h3 class="heading">Leave a <span>Review</span></h3>
+        <button class="btn" id="open-review-form">Leave a Review</button>
+    
+        <!-- Hidden Form -->
+        <form id="review-form" class="hidden">
+            <h3>Your Review</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="stars-container">
+                <div class="stars">
+                    <span class="star" data-value="0.5"></span>
+                    <span class="star" data-value="1"></span>
+                    <span class="star" data-value="1.5"></span>
+                    <span class="star" data-value="2"></span>
+                    <span class="star" data-value="2.5"></span>
+                    <span class="star" data-value="3"></span>
+                    <span class="star" data-value="3.5"></span>
+                    <span class="star" data-value="4"></span>
+                    <span class="star" data-value="4.5"></span>
+                    <span class="star" data-value="5"></span>
+                </div>
+                <input type="hidden" id="star-rating" name="rating" value="0">
+            </div>
+            
+            <input type="hidden" id="star-rating" name="rating" value="0">
+            <div class="inputBox">
+                <textarea placeholder="Write your review..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+    </section>
+    
+    
+    <!-- review section end -->
+
+    <!-- review section starts -->
     <section class="review" id="review">
-        <h3 class="heading" style="margin-top: 100px;"> customer's <span>review</span></h3>
+        <h3 class="heading" style="margin-top: 100px;"> customer's <span>reviews & Ratings</span></h3>
         <div class="box-container">
             <div class="box">
                 <img src="images/quote-img.png" alt="">
@@ -191,8 +229,74 @@
             <a href="#" class="fab fa-linkedin"></a>
             <a href="#" class="fab fa-pinterest"></a>
         </div>
-        <div class="credit"> all rights preserved</div>
+        <div class="credit"> all <span>rights</span> Reserved</div>
     </section>
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openReviewFormBtn = document.getElementById('open-review-form');
+            const reviewForm = document.getElementById('review-form');
+            const stars = document.querySelectorAll('.stars .fa');
+            const starRatingInput = document.getElementById('star-rating');
+    
+            // Show the form when the button is clicked
+            openReviewFormBtn.addEventListener('click', function () {
+                reviewForm.classList.toggle('hidden');
+            });
+            
+    
+            // Handle star hover and selection
+            stars.forEach(star => {
+                star.addEventListener('mouseover', function () {
+                    resetStars();
+                    highlightStars(this.dataset.rating);
+                });
+    
+                star.addEventListener('mouseout', function () {
+                    resetStars();
+                    highlightStars(starRatingInput.value); // Keep selected stars highlighted
+                });
+    
+                star.addEventListener('click', function () {
+                    starRatingInput.value = this.dataset.rating; // Set the rating
+                    resetStars();
+                    highlightStars(this.dataset.rating);
+                });
+            });
+    
+            // Reset all stars to default
+            function resetStars() {
+                stars.forEach(star => {
+                    star.classList.remove('hovered', 'selected');
+                });
+            }
+    
+            // Highlight stars up to the selected rating
+            function highlightStars(rating) {
+                stars.forEach(star => {
+                    if (parseFloat(star.dataset.rating) <= parseFloat(rating)) {
+                        star.classList.add('hovered');
+                    }
+                });
+            }
+    
+            // Handle form submission
+            reviewForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent page reload
+                const rating = starRatingInput.value;
+                if (rating === "0") {
+                    alert("Please select a star rating before submitting your review.");
+                } else {
+                    alert(`Thank you for your review!`);
+                    reviewForm.reset(); // Reset the form fields
+                    starRatingInput.value = "0"; // Reset rating
+                    resetStars(); // Reset stars
+                    reviewForm.classList.add('hidden'); // Hide the form
+                }
+            });
+        });
+    </script>
+    
+    
+    
 
 </body></html>
